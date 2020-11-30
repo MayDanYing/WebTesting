@@ -1,5 +1,6 @@
-package ru.geekbrains.lesson6.pages;
+package ru.geekbrains.lesson7.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,30 +37,35 @@ public class PodcastsPage extends BaseView {
     }
 
     // 2. Перейти на вкладку Подкасты в шапке страницы
-
+    @Step(value = "Open page with Podcasts")
     public PodcastsPage openPodcasts() {
         linkToPodcasts.click();
         return this;
     }
 
     //3. Открыть тему с подкастами "Что случилось"
+    @Step(value = "Open topic on a specific theme")
     public PodcastsPage openTopic() {
         topic.click();
         return this;
     }
 
     // 4. Выбрать первую по списку страницу из рубрики Подкасты, содержащую аудиофайл с подкастом.
+    @Step(value = "Choose an article")
     public PodcastsPage chooseArticle() {
         Actions actions = new Actions(driver);
         actions.moveToElement(articleOne).click().build().perform();
-        return this;
+         return this;
     }
 
     // 5. Нажмем на кнопку воспроизведения
+    @Step(value = "Press the buttoon to start podcast")
     public PodcastsPage clickButton() {
         Actions actions = new Actions(driver);
         actions.moveToElement(audioButton).click().build().perform();
         return this;
     }
+
+
 }
 

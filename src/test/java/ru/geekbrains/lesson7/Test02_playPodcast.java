@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson6;
+package ru.geekbrains.lesson7;
 
 import io.qameta.allure.Feature;
 import org.junit.Assert;

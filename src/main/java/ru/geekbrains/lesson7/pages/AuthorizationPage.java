@@ -1,5 +1,6 @@
-package ru.geekbrains.lesson6.pages;
+package ru.geekbrains.lesson7.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.lesson6.base.BaseView;
 
 // Page для Тест-кейса №3 Успешный ввод почтового адреса в поле авторизации
-public class AuthorizationPage extends BaseView {
+    public class AuthorizationPage extends BaseView {
 
     private final String EMAIL = "disaj19744@ummoh.com";
     private WebDriver driver;
@@ -26,19 +27,23 @@ public class AuthorizationPage extends BaseView {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+
     //2. Открыть вкладку "Войти", расположенную в правом верхнем углу главной страницы
+    @Step(value = "Open link for login")
     public AuthorizationPage openLink() {
         link.click();
         return this;
     }
 
     //3. Ввести свой почтовый адрес в поле ввода
+    @Step(value = "Enter email")
     public AuthorizationPage enterEmail() {
         box.sendKeys(EMAIL);
         return this;
     }
 
     //4.Подтвердить ввод. Совершается отправка письма для подтверждения авторизации на указанный почтовый адрес.
+    @Step(value = "Confirm entry")
     public AuthorizationPage confirmEntry() {
         box.sendKeys(Keys.ENTER);
         return this;
