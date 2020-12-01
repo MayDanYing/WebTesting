@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import ru.geekbrains.lesson6.base.BaseView;
+import ru.geekbrains.lesson7.base.BaseView;
 
 // Page для Тест-кейса №3 Успешный ввод почтового адреса в поле авторизации
     public class AuthorizationPage extends BaseView {
@@ -29,15 +29,17 @@ import ru.geekbrains.lesson6.base.BaseView;
     }
 
     //2. Открыть вкладку "Войти", расположенную в правом верхнем углу главной страницы
-    @Step(value = "Open link for login")
+    @Step(value = "Open link {link} for login")
     public AuthorizationPage openLink() {
+     //   Assert.assertTrue(driver.findElement((By) link).isDisplayed());
         link.click();
         return this;
     }
 
     //3. Ввести свой почтовый адрес в поле ввода
-    @Step(value = "Enter email")
+    @Step(value = "Enter email {EMAIL}")
     public AuthorizationPage enterEmail() {
+    //    Assert.assertTrue(driver.findElement((By) box).isDisplayed());
         box.sendKeys(EMAIL);
         return this;
     }

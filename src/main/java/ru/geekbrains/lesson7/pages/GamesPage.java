@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import ru.geekbrains.lesson6.base.BaseView;
+import ru.geekbrains.lesson7.base.BaseView;
 
 //Page для Тест-кейса №4 Успешный запуск игры из рубрики "Игры"
 public class GamesPage extends BaseView {
@@ -33,6 +33,7 @@ public class GamesPage extends BaseView {
     // 2. Перейти на вкладку ИГРЫ в шапке страницы
     @Step(value = "Open Games page")
     public GamesPage openGamesLink() {
+        //Assert.assertTrue(driver.findElement((By) linkGames).isDisplayed());
         linkGames.click();
         return this;
     }
@@ -40,6 +41,7 @@ public class GamesPage extends BaseView {
     // 3. Выбрать страницу с игрой
     @Step(value = "Choose specific game")
     public GamesPage chooseGame() {
+      //  Assert.assertTrue(driver.findElement((By) gameOne).isDisplayed());
         Actions actions = new Actions(driver);
         actions.moveToElement(gameOne).click().build().perform();
         //gameOne.click();
@@ -49,6 +51,7 @@ public class GamesPage extends BaseView {
     // 4. Нажать на кнопку "Начать игру"
     @Step(value = "Press button to start a game")
     public GamesPage startGame() {
+       // Assert.assertTrue(driver.findElement((By) button).isDisplayed());
         Actions actions = new Actions(driver);
         actions.moveToElement(button).click().build().perform();
         return this;

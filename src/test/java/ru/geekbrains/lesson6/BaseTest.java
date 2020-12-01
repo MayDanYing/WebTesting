@@ -1,11 +1,9 @@
 package ru.geekbrains.lesson6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -36,25 +34,25 @@ public class BaseTest {
         }
     }
 
-    @Test
-    public void confirmTitle()
-    {
-        driver.get(MAIN_PAGE);
-        String title = driver.getTitle();
-        String expectedTitle = "Новости — Meduza";
-        Assert.assertEquals(title, expectedTitle);
-        System.out.println("Title is identical");
-    }
-
-    @Test
-    public void confirmURL()
-    {
-        driver.get(MAIN_PAGE);
-        String actualURL = driver.getCurrentUrl();
-        String expectedURL = "https://meduza.io/";
-        Assert.assertEquals(actualURL, expectedURL);
-        System.out.println("URL is identical");
-    }
+//    @Test
+//    public void confirmTitle()
+//    {
+//        driver.get(MAIN_PAGE);
+//        String title = driver.getTitle();
+//        String expectedTitle = "Новости — Meduza";
+//        Assert.assertEquals(title, expectedTitle);
+//        System.out.println("Title is identical");
+//    }
+//
+//    @Test
+//    public void confirmURL()
+//    {
+//        driver.get(MAIN_PAGE);
+//        String actualURL = driver.getCurrentUrl();
+//        String expectedURL = "https://meduza.io/";
+//        Assert.assertEquals(actualURL, expectedURL);
+//        System.out.println("URL is identical");
+//    }
 
     private void open() {
         //1. Перейти на сайт meduza.io
