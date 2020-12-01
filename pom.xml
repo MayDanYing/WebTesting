@@ -19,7 +19,7 @@
       <hamcrest.version>2.2</hamcrest.version>
       <maven-surefire.version>2.22.2</maven-surefire.version>
       <allure-maven.version>2.10.0</allure-maven.version>
-      <aspectj.version>1.9.6</aspectj.version>
+      <aspectj.version>1.8.10</aspectj.version>
       <reportVersion.version>2.4.1</reportVersion.version>
       <slf4j-simple.version>1.7.30</slf4j-simple.version>
     </properties>
@@ -78,7 +78,7 @@
           <configuration>
             <testFailureIgnore>true</testFailureIgnore>
             <includes>
-              <include>**/*Test03*.java</include>
+              <include>**/*_lesson7*.java</include>
             </includes>
             <argLine>
               -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

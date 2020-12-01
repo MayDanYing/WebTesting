@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class BaseTest_lesson7 {
 
     private final String MAIN_PAGE = "https://meduza.io/";
     protected WebDriver driver;
