@@ -1,6 +1,8 @@
 package ru.geekbrains.lesson7.pages;
 
 import io.qameta.allure.Step;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,9 +38,20 @@ public class PodcastsPage extends BaseView {
         this.driver = driver;
     }
 
+//    @Step(value = "Confirm element's existence")
+//    public PodcastsPage confirm() {
+//        String expectedName = "a";
+//        By linkMain = By.cssSelector("a[href*='/podcasts']");
+//        Assert.assertEquals(expectedName,driver.findElement(linkMain).getTagName());
+//        return this;
+//    }
+
     // 2. Перейти на вкладку Подкасты в шапке страницы
     @Step(value = "Open page with Podcasts")
     public PodcastsPage openPodcasts() {
+        String expectedName = "a";
+        Assert.assertTrue(driver.findElement((By) linkToPodcasts).isDisplayed());
+        Assert.assertEquals(expectedName,driver.findElement((By) linkToPodcasts).getTagName());
         linkToPodcasts.click();
         return this;
     }
@@ -46,6 +59,7 @@ public class PodcastsPage extends BaseView {
     //3. Открыть тему с подкастами "Что случилось"
     @Step(value = "Open topic on a specific theme")
     public PodcastsPage openTopic() {
+        Assert.assertTrue(driver.findElement((By) topic).isDisplayed());
         topic.click();
         return this;
     }
@@ -54,14 +68,16 @@ public class PodcastsPage extends BaseView {
     @Step(value = "Choose an article")
     public PodcastsPage chooseArticle() {
         Actions actions = new Actions(driver);
+        Assert.assertTrue(driver.findElement((By) articleOne).isDisplayed());
         actions.moveToElement(articleOne).click().build().perform();
          return this;
     }
 
     // 5. Нажмем на кнопку воспроизведения
-    @Step(value = "Press the buttoon to start podcast")
+    @Step(value = "Press the butoon to start podcast")
     public PodcastsPage clickButton() {
         Actions actions = new Actions(driver);
+        Assert.assertTrue(driver.findElement((By) audioButton).isDisplayed());
         actions.moveToElement(audioButton).click().build().perform();
         return this;
     }

@@ -1,6 +1,8 @@
 package ru.geekbrains.lesson7.pages;
 
 import io.qameta.allure.Step;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,15 +31,17 @@ import ru.geekbrains.lesson6.base.BaseView;
     }
 
     //2. Открыть вкладку "Войти", расположенную в правом верхнем углу главной страницы
-    @Step(value = "Open link for login")
+    @Step(value = "Open link {link} for login")
     public AuthorizationPage openLink() {
+        Assert.assertTrue(driver.findElement((By) link).isDisplayed());
         link.click();
         return this;
     }
 
     //3. Ввести свой почтовый адрес в поле ввода
-    @Step(value = "Enter email")
+    @Step(value = "Enter email {EMAIL}")
     public AuthorizationPage enterEmail() {
+        Assert.assertTrue(driver.findElement((By) box).isDisplayed());
         box.sendKeys(EMAIL);
         return this;
     }
@@ -48,5 +52,12 @@ import ru.geekbrains.lesson6.base.BaseView;
         box.sendKeys(Keys.ENTER);
         return this;
     }
+//    @Step(value ="make screenshot")
+//    public AuthorizationPage makeS() {
+//
+//        String fileName = "screenshot" + System.currentTimeMillis() + ".png";
+//        ScreenshotMaker.makeScreenshot(driver, fileName);// saveScreenshot();
+//        return this;
+//    }
 
 }

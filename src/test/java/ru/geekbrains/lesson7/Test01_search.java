@@ -1,7 +1,7 @@
 package ru.geekbrains.lesson7;
 
 import io.qameta.allure.Feature;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import ru.geekbrains.lesson6.pages.SearchPage;
 
 @Feature("Тест-кейс №1 Успешный поиск статей по ключевым словам")
